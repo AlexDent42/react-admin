@@ -1,57 +1,42 @@
-import React from 'react'
-import './new.css'
-import Sidebar from '../../components/sidebar/Sidebar'
-import Navbar from '../../components/navbar/Navbar'
+import React from 'react';
+import './new.css';
+import Sidebar from '../../components/sidebar/Sidebar';
+import Navbar from '../../components/navbar/Navbar';
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
+import { useState } from 'react';
 
-const New = () => {
+const New = ({inputs, title}) => {
+
+  const  [file, setFile] = useState ("");
+  console.log( file);
   return (
     <div className='new'>
       <Sidebar/>
       <div className="newContainer">
         <Navbar />
         <div className="new__top">
-          <h1>Add new user </h1>
+          <h1>{title} </h1>
 
         </div>
         <div className="new__bottom">
           <div className="new__left">
-            <img src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg" alt="" />
+            <img src={
+              file ? URL.createObjectURL(file) : "https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
+            } alt="" />
           </div>
           <div className="new__right">
            <form>
            <div className="new__formInput">
                <label htmlFor='file'>Image:<DriveFolderUploadIcon className="icon"/></label>
-               <input type="file" id='file' style={{display:'none'}}/>
+               <input type="file" id='file' onChange={e=>setFile(e.target.files[0])} style={{display:'none'}}/>
              </div>
-             <div className="new__formInput">
-               <label>Username</label>
-               <input type="text" placeholder='John Doe' />
-             </div>
-             <div className="new__formInput">
-               <label>Name and Surname</label>
-               <input type="text" placeholder='John Doe' />
-             </div>
-             <div className="new__formInput">
-               <label>Email </label>
-               <input type="email" placeholder='john.doe@gmail.com' />
-             </div>
-             <div className="new__formInput">
-               <label>Phone </label>
-               <input type="text" placeholder='+436894637849378  ' />
-             </div>
-             <div className="new__formInput">
-               <label>Password </label>
-               <input type="password"  />
-             </div>
-             <div className="new__formInput">
-               <label>Address</label>
-               <input type="text" placeholder="Elton str,10"  />
-             </div>
-             <div className="new__formInput">
-               <label>Country</label>
-               <input type="text" placeholder="USA"  />
-             </div>
+
+             {inputs.map((input)=>(
+             <div className="new__formInput" key={input.id}>
+             <label>{input.label}</label>
+             <input type={input.type} placeholder={input.placeholder} />
+           </div>))}
+            
              <button>Send</button>
            </form>
           </div>
