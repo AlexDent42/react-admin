@@ -12,20 +12,21 @@ import PatternOutlinedIcon from '@mui/icons-material/PatternOutlined';
 import SettingsApplicationsOutlinedIcon from '@mui/icons-material/SettingsApplicationsOutlined';
 import AccountBoxOutlinedIcon from '@mui/icons-material/AccountBoxOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
         <div className="top">
-            <span className="logo">Logo here</span>
+            <Link to="/"><span className="logo">Logo here</span></Link>
         </div>
         <div className="center">
             <ul>
                 <p className="title">MAIN</p>
                 <li><DashboardIcon className="icon" /><span>Dashboard</span></li>
                 <p className="title">LISTS</p>
-                <li><PersonOutlineOutlinedIcon className="icon" /><span>Users</span></li>
-                <li><Inventory2OutlinedIcon className="icon" /><span>Products</span></li>
+                <Link to="/users"><li><PersonOutlineOutlinedIcon className="icon" /><span>Users</span></li></Link>
+                <Link to="/products"><li><Inventory2OutlinedIcon className="icon" /><span>Products</span></li></Link>
                 <li><BorderColorOutlinedIcon className="icon" /><span>Orders</span></li>
                 <li><AirportShuttleOutlinedIcon className="icon" /><span>Delivery</span></li>
                 <p className="title">USEFUL</p>
