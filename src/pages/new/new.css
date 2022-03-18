@@ -1,0 +1,75 @@
+.new {
+    width: 100%;
+    display: flex;
+}
+
+.newContainer   {
+    flex: 6;
+}
+
+.new__top, .new__bottom {
+    -webkit-box-shadow:2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    padding: 10px;
+    margin: 20px; 
+    display: flex;
+}
+.newContainer > .new__top > h1 {
+    color: lightgray;
+    font-size: 20px;
+} 
+.new__left {
+    flex: 1;
+    text-align: center;
+}
+
+.new__right {
+    flex:2;
+}
+
+.new__bottom > .new__left > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.new__bottom > .new__right > form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-around;
+}
+
+.new__formInput {
+     width: 40%;
+}
+
+.new__formInput > input {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray  ;
+}
+
+.new__formInput >label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.new__formInput > .icon {
+    cursor: pointer;
+} 
+
+.new__bottom > .new__right > form > button {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: teal;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
