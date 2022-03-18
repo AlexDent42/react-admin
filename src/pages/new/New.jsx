@@ -1,9 +1,19 @@
 import React from 'react'
 import './new.css'
+import Sidebar from '../../components/sidebar/Sidebar'
+import Navbar from '../../components/navbar/Navbar'
 
 const New = () => {
   return (
-    <div>New</div>
+    <div className='new'>
+      <Sidebar/>
+      <div className="newContainer">
+        <Navbar />
+
+      </div>
+
+
+    </div>
   )
 }
 
